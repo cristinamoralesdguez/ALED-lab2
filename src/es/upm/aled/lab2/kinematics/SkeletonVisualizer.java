@@ -31,7 +31,7 @@ public class SkeletonVisualizer {
 	public static void main(String[] args) {
 		// Kinematic chain definition
 		// Hip (root)
-		Segment hip = new Segment(0, Math.toRadians(0));
+		Segment hip = new Segment(0, Math.toRadians(0)); // Si cambias el primer número cambias la longitud de los segmentos
 		// Torso
 		Segment torso = new Segment(120, Math.toRadians(-90)); // Upwards, in screen coordinates, Y is down
 		hip.addChild(torso);
@@ -56,6 +56,8 @@ public class SkeletonVisualizer {
 		Segment rightCalf = new Segment(90, Math.toRadians(-10));
 		leftThigh.addChild(leftCalf);
 		rightThigh.addChild(rightCalf);
+		
+		//Si quieres dedos tendrás que añadir hijos a Forearm
 
 		// Exoskeleton drawing
 		SkeletonPanel panel = new SkeletonPanel(hip, 600, 600);
